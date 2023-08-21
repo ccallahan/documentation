@@ -33,6 +33,10 @@ apt update -y
 # Install PHP and required extensions
 apt install -y php8.1 php8.1-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip}
 
+::: warning
+The MariaDB installation script doesn't yet support Debian 12, skip this step and use the release shipped by Debian for now.
+:::
+
 # MariaDB repo setup script
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 
