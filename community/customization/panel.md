@@ -17,11 +17,11 @@ The build tools require NodeJS, yarn is used as the package manager.
 
 ```bash
 # Ubuntu/Debian
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 apt install -y nodejs
 
 # CentOS
-curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
 sudo yum install -y nodejs yarn # CentOS 7
 sudo dnf install -y nodejs yarn # CentOS 8
 ```
@@ -37,10 +37,11 @@ yarn # Installs panel build dependencies
 
 ## Build Panel Assets
 
-The following command will rebuild the Panel frontend.
+The following command will rebuild the Panel frontend. For NodeJS version 17 and above, you must enable the `--openssl-legacy-provider` option before building.
 
 ```bash
 cd /var/www/pterodactyl
+export NODE_OPTIONS=--openssl-legacy-provider # for NodeJS v17+
 yarn build:production # Build panel
 ```
 

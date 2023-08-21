@@ -4,7 +4,7 @@ In this guide we will install Pterodactyl v1.X — including all of it's depende
 [[toc]]
 
 ::: tip
-This guide is based off the [official installation documentation](/panel/1.0/etting_started.md) but is tailored specifically for Enterprise Linux 8.
+This guide is based off the [official installation documentation](/panel/1.0/getting_started.md) but is tailored specifically for Enterprise Linux 8.
 :::
 
 ## Install Requirements and Additional Utilities
@@ -28,19 +28,19 @@ systemctl start mariadb
 systemctl enable mariadb
 ```
 
-### PHP 7.4
+### PHP 8.0
 We recommend the remi repo to get the latest php packages.
 
 ```bash
 ## Install Repos
 dnf install epel-release
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
-dnf module enable php:remi-7.4
+dnf module enable php:remi-8.0
 
 ## Get dnf updates
 dnf update -y
 
-## Install PHP 7.4
+## Install PHP 8.0
 dnf install -y php php-{common,fpm,cli,json,mysqlnd,gd,mbstring,pdo,zip,bcmath,dom,opcache}
 ```
 
